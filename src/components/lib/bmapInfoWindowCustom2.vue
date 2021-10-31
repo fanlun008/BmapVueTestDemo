@@ -101,7 +101,7 @@ export default {
       }
     },
     computedStyle () {
-      let style = {}
+      const style = {}
       if (!this.saveVisible) {
         style.display = 'none'
       } else {
@@ -147,13 +147,13 @@ export default {
     panMap () {
       if (this.enableAutoPan) {
         this.$nextTick(() => {
-          let height = this.$refs.infoWindow.offsetHeight + 11
-          let width = this.$refs.infoWindow.offsetWidth
-          let pixel = this.$bmap.pointToOverlayPixel(this.savePosition)
-          let leftOffset = pixel.x - width / 2 + this.offset[0]
-          let topOffset = pixel.y - height + this.offset[1]
-          let mapWidth = this.mapSize.width
-          let mapHeight = this.mapSize.height
+          const height = this.$refs.infoWindow.offsetHeight + 11
+          const width = this.$refs.infoWindow.offsetWidth
+          const pixel = this.$bmap.pointToOverlayPixel(this.savePosition)
+          const leftOffset = pixel.x - width / 2 + this.offset[0]
+          const topOffset = pixel.y - height + this.offset[1]
+          const mapWidth = this.mapSize.width
+          const mapHeight = this.mapSize.height
           let panX = 0
           let panY = 0
           if (leftOffset < 0) {
@@ -197,7 +197,7 @@ export default {
     },
     resizeMap () {
       this.mapSize = this.$bmap.getContainerSize()
-      let timer = setTimeout(() => {
+      const timer = setTimeout(() => {
         this.calcPosition()
         clearTimeout(timer)
       }, 0)
@@ -213,7 +213,7 @@ export default {
       if (!this.savePosition) {
         return
       }
-      let pixel = this.$bmap.pointToOverlayPixel(this.savePosition)
+      const pixel = this.$bmap.pointToOverlayPixel(this.savePosition)
       this.savePixel = pixel
       this.styleObj.left = (pixel.x + this.offset[0]) + 'px'
       this.styleObj.top = (pixel.y + this.offset[1]) + 'px'
@@ -226,14 +226,14 @@ export default {
         this.anchorClass = this.anchor !== 'auto' ? this.anchor : 'bottom'
         return
       }
-      let mapSize = this.mapSize
-      let mapWidth = mapSize.width
-      let mapHeight = mapSize.height
-      let arrowOffset = 11
-      let height = this.$refs.infoWindow.offsetHeight
-      let width = this.$refs.infoWindow.offsetWidth
-      let pointX = this.savePixel.x
-      let pointY = this.savePixel.y
+      const mapSize = this.mapSize
+      const mapWidth = mapSize.width
+      const mapHeight = mapSize.height
+      const arrowOffset = 11
+      const height = this.$refs.infoWindow.offsetHeight
+      const width = this.$refs.infoWindow.offsetWidth
+      const pointX = this.savePixel.x
+      const pointY = this.savePixel.y
       let anchor = ''
       if ((height + arrowOffset) <= pointY && pointY <= mapHeight && (width / 2) <= pointX && (mapWidth - pointX) >= (width / 2)) {
         anchor = 'bottom'

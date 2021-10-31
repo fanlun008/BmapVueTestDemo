@@ -60,7 +60,7 @@ import { bubbleDataListMock } from './lib/bubbleDataListMock'
 import { util as bmapvglUtil } from 'vue-mapvgl'
 import BubbleTooltip from './BubbleTooltip'
 // eslint-disable-next-line no-unused-vars
-// import bmapInfoWindowCustom2 from '../lib/bmapInfoWindowCustom2'
+// import bmapInfoWindowCustom2 from './lib/bmapInfoWindowCustom2'
 export default {
   name: 'Bmapdemo',
   components: {
